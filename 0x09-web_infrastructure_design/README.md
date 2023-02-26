@@ -34,7 +34,7 @@ Web Applications Infrastructure/Web Infrastructure also called internet infrastr
 - What type of DNS record www is in www.foobar.com?:   Subdomain and it redirects to the main domain
 - What is the role of the web server?:   A web server is a software that serves web pages to clients upon their request, it does this over the protocol HTTP.
 - What is the role of the database?:   To store and organize collection of information so that it can be easily accessed, updated and managed.
-- What is the server using to communicate with the computer of the user requesting the website?:   http
+- What is the server using to communicate with the computer of the user requesting the website?:   HTTP
 
 ## Distrubuted Web Infrasture
 
