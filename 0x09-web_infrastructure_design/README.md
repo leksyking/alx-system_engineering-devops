@@ -27,6 +27,13 @@ Web Applications Infrastructure/Web Infrastructure also called internet infrastr
 - 1 database `(MySQL)`
 - 1 domain name `foobar.com` configured with a `www` record that points to your server IP `8.8.8.8`
 
+- What is a server?: A device, a virtual device or computer program that provides functionalities for other programs or devices, called "clients".
+- What is the role of the domain name?
+- What type of DNS record www is in www.foobar.com?: Subdomain and it redirects to the main domain
+- What is the role of the web server?: A web server is a software that serves web pages to clients upon their request, it does this over the protocol HTTP.
+- What is the role of the database?: Is a collection of information that is stored and organized so that it can be easily accessed, updated and managed.
+- What is the server using to communicate with the computer of the user requesting the website? http
+
 ## Distrubuted Web Infrasture
 
 ![](https://upload.wikimedia.org/wikipedia/commons/5/55/Network_Architecture_Diagram_-_Distributed_Web_Infrastructure.pdf)
