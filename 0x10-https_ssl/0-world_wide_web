@@ -10,7 +10,7 @@ if [[ $# == 1 ]]; then
     sub_domains=('www' 'lb-01' 'web-01' 'web-02')
     for i in "${sub_domains[@]}"; do
 	CONCATENATE="$i.$1"
-	DNS_info $i $CONCATENATE
+	DNS_INFO $i $CONCATENATE
     done
 else
     CONCATENATE="$2.$1"
