@@ -1,4 +1,18 @@
 #!/usr/bin/env bash
 # Configure the domain to handle wherever the subdomains point too
 
+DNS_INFO () {
+    NAME=$(dig $2 | grep -A1 'NAME SECTION:' | awk 'NR==2 {print $0}')
+    echo "The subdomain $1 is a $(echo $NAME | awk '{print $4}') record and points to $(echo $NAME | awk '{print $5}')"
+}
 
+if [[ $# == 1 ]]; then
+    sub_domains=('www' 'lb-01' 'web-01' 'web-02')
+    for i in "${sub_domains[@]}"; do
+	CONCATENATE="$i.$1"
+	DNS_info $i $CONCATENATE
+    done
+else
+    CONCATENATE="$2.$1"
+    DNS_INFO $2 $CONCATENATE
+fi
