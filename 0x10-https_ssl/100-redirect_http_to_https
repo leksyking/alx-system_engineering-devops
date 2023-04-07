@@ -46,6 +46,6 @@ frontend leksyking.tech
 
 backend web_servers
         balance roundrobin
-        server 155201-web-01 54.89.118.196 check
-        server 155201-web-02 54.175.136.180 check
+        server 64820-web-01 100.26.152.157:80 check
+        server 64820-web-02 52.86.102.6:80 check
 
