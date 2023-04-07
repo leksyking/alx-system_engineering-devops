@@ -2,8 +2,8 @@
 # Configure the domain to handle wherever the subdomains point too
 
 DNS_INFO () {
-    NAME=$(dig $2 | grep -A1 'NAME SECTION:' | awk 'NR==2 {print $0}')
-    echo "The subdomain $1 is a $(echo $NAME | awk '{print $4}') record and points to $(echo $NAME | awk '{print $5}')"
+    ANSWER=$(dig $2 | grep -A1 'ANSWER SECTION:' | awk 'NR==2 {print $0}')
+    echo "The subdomain $1 is a $(echo $ANSWER | awk '{print $4}') record and points to $(echo $ANSWER | awk '{print $5}')"
 }
 
 if [[ $# == 1 ]]; then
