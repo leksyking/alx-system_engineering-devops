@@ -42,10 +42,10 @@ frontend leksyking.tech
         bind 0:443 ssl crt /etc/ssl/private/cert.pem
         http-request redirect scheme https code 301 unless { ssl_fc }
         option forwardfor
-        default_backend web_servers
+        default_backend leksyking.tech
 
-backend web_servers
+backend leksyking.tech
         balance roundrobin
-        server 64820-web-01 100.26.152.157:80 check
-        server 64820-web-02 52.86.102.6:80 check
+         server 155201-web-01 54.89.118.196 check
+        server 155201-web-02 54.175.136.180 check
 
