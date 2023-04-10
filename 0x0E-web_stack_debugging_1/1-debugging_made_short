@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # A script thet configures an nginx server to listen on port 80.
 
-sed -i "s/8080/80/g" /etc/nginx/sites-enabled/default
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx restart
-sudo kill -9 "$(cat /var/run/nginx.pid)"
+kill "$(pgrep 'nginx' | head -1)"
