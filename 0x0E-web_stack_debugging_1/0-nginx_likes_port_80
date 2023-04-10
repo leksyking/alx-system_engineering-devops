@@ -9,3 +9,4 @@ ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
 # Restart nginx to apply the changes
 service nginx restart
+
