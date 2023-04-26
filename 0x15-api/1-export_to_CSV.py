@@ -8,19 +8,14 @@ import sys
 
 
 if __name__ == '__main__':
-    employee_Id = sys.argv[1]
-    baseUrl = "https://jsonplaceholder.typicode.com/users"
-    url = baseUrl + "/" + employee_Id
+    user_id = sys.argv[1]
+    url = "https://jsonplaceholder.typicode.com/"
 
-    response = requests.get(url)
-    username = response.json().get('username')
+    usr = r.get(url + "users/{}".format(user_id)).json()
+    username = usr.get("username")
+    todo = r.get(url + "todos", params={"userId": user_id}).json()
 
-    todoUrl = url + "/todos"
-    response = requests.get(todoUrl)
-    tasks = response.json()
-
-    with open('{}.csv'.format(employee_Id), 'w') as file:
-        for task in tasks:
-            file.write('"{}","{}","{}","{}"\n'
-                       .format(employee_Id, username, task.get('completed'),
-                               task.get('title')))
+    with open("{}.csv".format(user_id), "w", newline="") as csvfile:
+        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+        [writer.writerow([user_id, username, elm.get("completed"),
+                          elm.get("title")]) for elm in todo]

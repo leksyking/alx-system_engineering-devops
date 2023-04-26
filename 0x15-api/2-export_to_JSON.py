@@ -9,23 +9,16 @@ import sys
 
 
 if __name__ == '__main__':
-    employee_Id = sys.argv[1]
-    baseUrl = "https://jsonplaceholder.typicode.com/users"
-    url = baseUrl + "/" + employee_Id
+    user_id = sys.argv[1]
+    url = "https://jsonplaceholder.typicode.com/"
+    
+    user = requests.get(url + "users/{}".format(user_id)).json()
+    username = user.get("username")
+    todos = requests.get(url + "todos", params={"userId": user_id}).json()
 
-    response = requests.get(url)
-    username = response.json().get('username')
-
-    todoUrl = url + "/todos"
-    response = requests.get(todoUrl)
-    tasks = response.json()
-
-    dictionary = {employee_Id: []}
-    for task in tasks:
-        dictionary[employee_Id].append({
-            "task": task.get('title'),
-            "completed": task.get('completed'),
-            "username": username
-        })
-    with open('{}.json'.format(employee_Id), 'w') as filename:
-        json.dump(dictionary, filename)
+    with open("{}.json".format(user_id), "w") as jsonfile:
+        json.dump({user_id: [{
+                "task": t.get("title"),
+                "completed": t.get("completed"),
+                "username": username
+            } for t in todos]}, jsonfile)
