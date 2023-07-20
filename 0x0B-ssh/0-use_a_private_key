@@ -1,13 +1,5 @@
-<<<<<<< HEAD
 #!/usr/bin/env bash
-# This Script connects to the server 54.160.115.128 using the users private key
+# This Script connects to the server 100.25.33.252 using the users private key
 # stored in a file school Found in the users home directory
 
 ssh -i ~/.ssh/school ubuntu@100.25.33.252
-=======
-#!/usr/bin/env bash
-# This Script connects to the server 54.160.115.128 using the users private key
-# stored in a file school Found in the users home directory
-
-ssh -i ~/.ssh/school ubuntu@100.26.221.103
->>>>>>> e753b61889dd4118d7432e4b8e43ab95789c19fc
