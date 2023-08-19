@@ -1,2 +1,1 @@
-#!/bin/bash
-A new task
+Webstack monitoring task
